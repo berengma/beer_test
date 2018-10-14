@@ -140,6 +140,7 @@ minetest.register_node("beer_test:barrel_mead_brewing", {
 	"beer_test_barrel_side_2.png", "beer_test_barrel_side_2.png", "beer_test_barrel_side_2.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
+	diggable = false,
 	groups = {choppy=2,oddly_breakable_by_hand=2,not_in_creative_inventory=1},
 	sounds = default.node_sound_barrel_defaults(),
 	on_timer = function(pos, elapsed)
@@ -165,6 +166,7 @@ minetest.register_node("beer_test:barrel_mead_brewing", {
 		end
 	end,
 	on_punch = function(pos, node, puncher, pointed_thing)
+	    
 		minetest.chat_send_player(puncher:get_player_name(),"stopped brewing")
 		local meta = minetest.get_meta(pos)
 		local state = meta:get_int("state") or 1; --//fallback if state is unknown

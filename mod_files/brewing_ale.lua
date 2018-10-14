@@ -140,6 +140,7 @@ minetest.register_node("beer_test:barrel_ale_brewing", {
 	"beer_test_barrel_side_2.png", "beer_test_barrel_side_2.png", "beer_test_barrel_side_2.png"},
 	paramtype = "light",
 	paramtype2 = "facedir",
+	diggable = false,
 	groups = {choppy=2,oddly_breakable_by_hand=2,not_in_creative_inventory=1},
 	sounds = default.node_sound_barrel_defaults(),
 	on_timer = function(pos, elapsed)
